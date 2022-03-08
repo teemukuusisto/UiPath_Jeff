@@ -56,7 +56,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Flowchart sap:VirtualizedContainerService.HintSize="633.777777777778,636.444444444444" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -78,7 +77,7 @@
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="874.666666666667,912" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="HaeOstolaskuExcel.xaml">
             <ui:InvokeWorkflowFile.Arguments>
@@ -92,7 +91,7 @@
           </ui:InvokeWorkflowFile>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="840.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -129,7 +128,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:FileExistsX DisplayName="File Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,135.111111111111" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="Data\Lappeenrannan kaupungin ostolaskut 20201.xlsx" />
+            <ui:FileExistsX DisplayName="File Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,135.111111111111" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="Data\Lappeenrannan kaupungin ostolaskut 2020.xlsx" />
             <If Condition="[FileExists = True]" sap:VirtualizedContainerService.HintSize="795.555555555556,410.666666666667" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_3">
@@ -160,7 +159,7 @@
     <FlowStep>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">90,293.555555555556</av:Point>
+          <av:Point x:Key="ShapeLocation">20,263.555555555556</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
