@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dg73ECBZzlK7gIkPOqtpP31PDOsh4gALPHWQnbGxKEtF29fXVrkFgrMPKq2KVTkT/GqHCZjicTh8oYfX1KU9lg==",
+  "dgSpecHash": "syOxtbVZJ/KTGJ0cba15rjZq8ZUlmnV+iMkcntbe18F+LgufYI8EYFr7i6L4KY97r/5gbVo7Fj99YRepVcUfzQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Valtteri.000\\OneDrive\\Lipasto\\Maisteri\\Digitaaliset liiketoimintaprosessit\\UiPath_Jeff\\UiPath_Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local\\",
+  "projectFilePath": "C:\\Users\\Valtteri.000\\Documents\\UiPath\\Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\Valtteri.000\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
     "C:\\Users\\Valtteri.000\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
