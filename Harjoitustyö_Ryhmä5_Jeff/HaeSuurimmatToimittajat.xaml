@@ -124,6 +124,9 @@ Select SuurimmatDT.Rows.Add(result)).CopyToDataTable]</InArgument>
               <Assign.To>
                 <OutArgument x:TypeArguments="sd:DataTable">[SuurimmatViisiDT]</OutArgument>
               </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="sd:DataTable">[SuurimmatDT.AsEnumerable().Take(5).CopyToDataTable]</InArgument>
+              </Assign.Value>
             </Assign>
           </Sequence>
         </ActivityAction>
@@ -142,7 +145,7 @@ Select SuurimmatDT.Rows.Add(result)).CopyToDataTable]</InArgument>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="334,132" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_2" Range="A:Z" SheetName="Sheet1" ShiftCells="False" ShiftOption="ShiftUp" />
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[SuurimmatDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="A1" />
+            <ui:ExcelWriteRange AddHeaders="True" DataTable="[SuurimmatViisiDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_2" SheetName="Sheet1" StartingCell="A1" />
           </Sequence>
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
