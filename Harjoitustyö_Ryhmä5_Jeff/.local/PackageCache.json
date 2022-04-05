@@ -157,7 +157,7 @@
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.activities/3.3.2\\lib/net461/UiPath.OCR.Activities.Design.dll",
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.activities/3.3.2\\lib/net461/UiPath.OCR.Activities.dll",
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.activities/3.3.2\\lib/net461/UiPath.OCR.Core.dll",
-        "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts/2.9.1\\lib/net461/UiPath.OCR.Contracts.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts/2.10.0-preview\\lib/net461/UiPath.OCR.Contracts.dll",
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.platform/21.10.0\\lib/net461/UiPath.Platform.dll",
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.telemetry.client/1.5.3\\lib/net461/TelemetryClient.dll",
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.uiautomation.activities/21.10.5\\lib/net461/UiPath.CV.Activities.Design.dll",
@@ -178,10 +178,50 @@
         "C:\\Users\\teemu\\.nuget\\packages\\uipath.vision/3.1.4\\lib/net461/UiPath.Vision.dll"
       ],
       "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.uiautomation.activities\\21.10.5"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.PDF.Activities",
+        "Version": "3.5.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.docotic.pdf/7.5.11645\\lib/net46/BitMiracle.Docotic.Pdf.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.libtiff.net/2.4.649\\lib/net40/BitMiracle.LibTiff.NET.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\newtonsoft.json/11.0.2\\lib/net45/Newtonsoft.Json.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\ntextcat/0.3.65\\lib/netstandard2.0/NTextCat.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.buffers/4.5.1\\lib/net461/System.Buffers.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.collections.immutable/5.0.0\\lib/net461/System.Collections.Immutable.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.common/5.0.2\\lib/net461/System.Drawing.Common.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.primitives/4.3.0\\lib/net45/System.Drawing.Primitives.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.io.abstractions/3.0.10\\lib/net40/System.IO.Abstractions.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.memory/4.5.4\\lib/net461/System.Memory.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.numerics.vectors/4.5.0\\lib/net46/System.Numerics.Vectors.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.runtime.compilerservices.unsafe/4.7.1\\lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.threading.tasks.dataflow/5.0.0\\lib/net461/System.Threading.Tasks.Dataflow.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\system.valuetuple/4.5.0\\lib/net461/System.ValueTuple.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.documentunderstanding.digitizer/1.2.0-preview\\lib/netstandard2.0/UiPath.DocumentUnderstanding.Digitizer.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts/2.10.0-preview\\lib/net461/UiPath.OCR.Contracts.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities/3.5.0-preview\\lib/net461/UiPath.PDF.Activities.Design.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities/3.5.0-preview\\lib/net461/UiPath.PDF.Activities.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities/3.5.0-preview\\lib/net461/UiPath.PDF.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities/3.5.0-preview\\lib/net461/UiPath.PDF.Telemetry.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.telemetry.client/1.5.3\\lib/net461/TelemetryClient.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview"
     }
   ],
   "Conflicts": [],
   "ResolvedDependencies": {
+    "BitMiracle.Docotic.Pdf": {
+      "Id": "BitMiracle.Docotic.Pdf",
+      "Version": "7.5.11645",
+      "Dependencies": []
+    },
+    "BitMiracle.LibTiff.NET": {
+      "Id": "BitMiracle.LibTiff.NET",
+      "Version": "2.4.649",
+      "Dependencies": []
+    },
     "ClosedXML": {
       "Id": "ClosedXML",
       "Version": "0.87.1",
@@ -843,6 +883,11 @@
         }
       ]
     },
+    "NTextCat": {
+      "Id": "NTextCat",
+      "Version": "0.3.65",
+      "Dependencies": []
+    },
     "Portable.BouncyCastle": {
       "Id": "Portable.BouncyCastle",
       "Version": "1.8.8",
@@ -876,6 +921,16 @@
     "System.Data.DataSetExtensions": {
       "Id": "System.Data.DataSetExtensions",
       "Version": "4.5.0",
+      "Dependencies": []
+    },
+    "System.Drawing.Common": {
+      "Id": "System.Drawing.Common",
+      "Version": "5.0.2",
+      "Dependencies": []
+    },
+    "System.Drawing.Primitives": {
+      "Id": "System.Drawing.Primitives",
+      "Version": "4.3.0",
       "Dependencies": []
     },
     "System.IO.Abstractions": {
@@ -1089,6 +1144,36 @@
         }
       ]
     },
+    "UiPath.DocumentUnderstanding.Digitizer": {
+      "Id": "UiPath.DocumentUnderstanding.Digitizer",
+      "Version": "1.2.0-preview",
+      "Dependencies": [
+        {
+          "Item1": "BitMiracle.Docotic.Pdf",
+          "Item2": "[7.5.11645, )"
+        },
+        {
+          "Item1": "System.Drawing.Common",
+          "Item2": "[5.0.2, )"
+        },
+        {
+          "Item1": "System.Drawing.Primitives",
+          "Item2": "[4.3.0, )"
+        },
+        {
+          "Item1": "System.Collections.Immutable",
+          "Item2": "[1.5.0, )"
+        },
+        {
+          "Item1": "NTextCat",
+          "Item2": "[0.3.65, )"
+        },
+        {
+          "Item1": "BitMiracle.LibTiff.NET",
+          "Item2": "[2.4.649, )"
+        }
+      ]
+    },
     "UiPath.Excel.Activities": {
       "Id": "UiPath.Excel.Activities",
       "Version": "2.11.4",
@@ -1190,8 +1275,46 @@
     },
     "UiPath.OCR.Contracts": {
       "Id": "UiPath.OCR.Contracts",
-      "Version": "2.9.1",
+      "Version": "2.10.0-preview",
       "Dependencies": []
+    },
+    "UiPath.PDF.Activities": {
+      "Id": "UiPath.PDF.Activities",
+      "Version": "3.5.0-preview",
+      "Dependencies": [
+        {
+          "Item1": "BitMiracle.Docotic.Pdf",
+          "Item2": "[7.5.11645, )"
+        },
+        {
+          "Item1": "Newtonsoft.Json",
+          "Item2": "[11.0.2, )"
+        },
+        {
+          "Item1": "System.IO.Abstractions",
+          "Item2": "[3.0.10, )"
+        },
+        {
+          "Item1": "System.Threading.Tasks.Dataflow",
+          "Item2": "[5.0.0, )"
+        },
+        {
+          "Item1": "System.ValueTuple",
+          "Item2": "[4.5.0, )"
+        },
+        {
+          "Item1": "UiPath.DocumentUnderstanding.Digitizer",
+          "Item2": "[1.2.0-preview, )"
+        },
+        {
+          "Item1": "UiPath.OCR.Contracts",
+          "Item2": "[2.10.0-preview, )"
+        },
+        {
+          "Item1": "UiPath.Telemetry.Client",
+          "Item2": "[1.5.3, )"
+        }
+      ]
     },
     "UiPath.Platform": {
       "Id": "UiPath.Platform",
@@ -1349,6 +1472,26 @@
     }
   },
   "AllPackages": [
+    {
+      "Package": {
+        "Id": "BitMiracle.Docotic.Pdf",
+        "Version": "7.5.11645"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.docotic.pdf\\7.5.11645\\lib\\net46\\BitMiracle.Docotic.Pdf.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.docotic.pdf\\7.5.11645"
+    },
+    {
+      "Package": {
+        "Id": "BitMiracle.LibTiff.NET",
+        "Version": "2.4.649"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\lib\\net40\\BitMiracle.LibTiff.NET.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649"
+    },
     {
       "Package": {
         "Id": "ClosedXML",
@@ -1903,6 +2046,16 @@
     },
     {
       "Package": {
+        "Id": "NTextCat",
+        "Version": "0.3.65"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\ntextcat\\0.3.65\\lib\\netstandard2.0\\NTextCat.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\ntextcat\\0.3.65"
+    },
+    {
+      "Package": {
         "Id": "Portable.BouncyCastle",
         "Version": "1.8.8"
       },
@@ -1960,6 +2113,26 @@
         "C:\\Users\\teemu\\.nuget\\packages\\system.data.datasetextensions\\4.5.0\\lib\\net45\\_._"
       ],
       "Path": "C:\\Users\\teemu\\.nuget\\packages\\system.data.datasetextensions\\4.5.0"
+    },
+    {
+      "Package": {
+        "Id": "System.Drawing.Common",
+        "Version": "5.0.2"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.common\\5.0.2\\lib\\net461\\System.Drawing.Common.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.common\\5.0.2"
+    },
+    {
+      "Package": {
+        "Id": "System.Drawing.Primitives",
+        "Version": "4.3.0"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.primitives\\4.3.0\\lib\\net45\\System.Drawing.Primitives.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\system.drawing.primitives\\4.3.0"
     },
     {
       "Package": {
@@ -2163,6 +2336,16 @@
     },
     {
       "Package": {
+        "Id": "UiPath.DocumentUnderstanding.Digitizer",
+        "Version": "1.2.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.documentunderstanding.digitizer\\1.2.0-preview\\lib\\netstandard2.0\\UiPath.DocumentUnderstanding.Digitizer.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.documentunderstanding.digitizer\\1.2.0-preview"
+    },
+    {
+      "Package": {
         "Id": "UiPath.Excel.Activities",
         "Version": "2.11.4"
       },
@@ -2220,12 +2403,25 @@
     {
       "Package": {
         "Id": "UiPath.OCR.Contracts",
-        "Version": "2.9.1"
+        "Version": "2.10.0-preview"
       },
       "Assemblies": [
-        "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts\\2.9.1\\lib\\net461\\UiPath.OCR.Contracts.dll"
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts\\2.10.0-preview\\lib\\net461\\UiPath.OCR.Contracts.dll"
       ],
-      "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts\\2.9.1"
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.ocr.contracts\\2.10.0-preview"
+    },
+    {
+      "Package": {
+        "Id": "UiPath.PDF.Activities",
+        "Version": "3.5.0-preview"
+      },
+      "Assemblies": [
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview\\lib\\net461\\UiPath.PDF.Activities.Design.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview\\lib\\net461\\UiPath.PDF.Activities.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview\\lib\\net461\\UiPath.PDF.dll",
+        "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview\\lib\\net461\\UiPath.PDF.Telemetry.dll"
+      ],
+      "Path": "C:\\Users\\teemu\\.nuget\\packages\\uipath.pdf.activities\\3.5.0-preview"
     },
     {
       "Package": {
