@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "kD3MEb24LrZ9fW76JaISr47OBf7ZwbX5cPcewc5pyDU+/m6H8FKASpOzgoJTjFB4Zkn6iNOZgtZFQpFmICKb4Q==",
+  "dgSpecHash": "l0+zFUeNyyYZ7EUmEJL52PLSgWb0qy08ZhBos4lMdL0HdU4OzZa4E8z+X73YzhcBv+Bnem0Lq0v38eLS9OjLgw==",
   "success": true,
   "projectFilePath": "C:\\Users\\teemu\\OneDrive\\Asiakirjat\\GitHub\\UiPath_Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local\\",
   "expectedPackageFiles": [
     "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.docotic.pdf\\7.5.11645\\bitmiracle.docotic.pdf.7.5.11645.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\closedxml\\0.87.1\\closedxml.0.87.1.nupkg.sha512",
+    "C:\\Users\\teemu\\.nuget\\packages\\credentialmanagement\\1.0.2\\credentialmanagement.1.0.2.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\csvhelper\\16.0.0\\csvhelper.16.0.0.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\documentformat.openxml\\2.5.0\\documentformat.openxml.2.5.0.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\google.apis\\1.43.0\\google.apis.1.43.0.nupkg.sha512",
@@ -90,6 +91,7 @@
     "C:\\Users\\teemu\\.nuget\\packages\\uipath\\21.10.34.30369\\uipath.21.10.34.30369.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\uipath.activities.runtimegovernance\\1.1.3\\uipath.activities.runtimegovernance.1.1.3.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\uipath.connectionclient\\1.0.0-20210921.1\\uipath.connectionclient.1.0.0-20210921.1.nupkg.sha512",
+    "C:\\Users\\teemu\\.nuget\\packages\\uipath.credentials.activities\\2.0.0\\uipath.credentials.activities.2.0.0.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\uipath.documentunderstanding.digitizer\\1.2.0-preview\\uipath.documentunderstanding.digitizer.1.2.0-preview.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\uipath.excel.activities\\2.11.4\\uipath.excel.activities.2.11.4.nupkg.sha512",
     "C:\\Users\\teemu\\.nuget\\packages\\uipath.imageprocessing\\21.10.2\\uipath.imageprocessing.21.10.2.nupkg.sha512",

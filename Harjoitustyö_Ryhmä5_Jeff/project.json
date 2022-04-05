@@ -3,6 +3,7 @@
   "description": "Digitaaliset liiketoimintaprosessit harjoitustyö\r\nRyhmä 5\r\nTeemu Kuusisto\r\nValtteri Ylitalo\r\nNiko Kaakkunen\r\nYusuf Abdulahi",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[2.0.0]",
     "UiPath.Excel.Activities": "[2.11.4]",
     "UiPath.Mail.Activities": "[1.12.3]",
     "UiPath.PDF.Activities": "[3.5.0-preview]",
