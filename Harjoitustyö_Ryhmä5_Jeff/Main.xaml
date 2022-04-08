@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>700,625.777777777778</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>780.888888888889,701.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -69,7 +69,6 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>netstandard</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
@@ -79,7 +78,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart sap:VirtualizedContainerService.HintSize="714.666666666667,636.444444444444" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Flowchart - Prosessi" sap:VirtualizedContainerService.HintSize="714.666666666667,636.444444444444" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:TimeSpan" Name="Start_time" />
     </Flowchart.Variables>
@@ -90,6 +89,7 @@
         <av:Size x:Key="ShapeSize">60,75.1111111111111</av:Size>
         <av:PointCollection x:Key="ConnectorLocation">70,40 100,40 100,50 150,50</av:PointCollection>
         <x:Double x:Key="Width">681</x:Double>
+        <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
