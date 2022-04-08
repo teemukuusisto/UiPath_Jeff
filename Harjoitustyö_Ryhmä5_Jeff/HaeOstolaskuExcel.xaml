@@ -7,10 +7,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>848,2060.44444444444</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>906.222222222222,3584.88888888889</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HaeOstolaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="74">
+    <scg:List x:TypeArguments="x:String" Capacity="38">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -52,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -89,7 +89,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow navigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin ja siirtää sen sieltä omaan data-kansioonsa." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="479.111111111111,1995.55555555556" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow navigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin ja siirtää sen sieltä omaan data-kansioonsa." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="916.444444444444,3520" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OstolaskudataDT" />
       <Variable x:TypeArguments="x:String" Name="URL" />
@@ -106,7 +106,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="874.666666666667,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.555555555556,152" sap2010:WorkflowViewState.IdRef="Sequence_34">
           <sap:WorkflowViewStateService.ViewState>
@@ -124,7 +124,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="874.666666666667,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_2">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.555555555556,281.777777777778" sap2010:WorkflowViewState.IdRef="Sequence_35">
           <sap:WorkflowViewStateService.ViewState>
@@ -142,15 +142,39 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <TryCatch DisplayName="Try Catch - Kansiopolku" sap:VirtualizedContainerService.HintSize="437.333333333333,536.444444444444" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+    <TryCatch DisplayName="Try Catch - Kansiopolku" sap:VirtualizedContainerService.HintSize="874.666666666667,1085.77777777778" sap2010:WorkflowViewState.IdRef="TryCatch_10">
       <TryCatch.Try>
-        <ui:SelectFolder DisplayName="Select download folder" sap:VirtualizedContainerService.HintSize="333.777777777778,80" sap2010:WorkflowViewState.IdRef="SelectFolder_4" SelectedFolder="[DownloadFolder]" />
-      </TryCatch.Try>
-      <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,369.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Sequence sap:VirtualizedContainerService.HintSize="459.111111111111,568.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_37">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="417.333333333333,476" sap2010:WorkflowViewState.IdRef="RetryScope_3" NumberOfRetries="2">
+            <ui:RetryScope.ActivityBody>
+              <ActivityAction>
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,298.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.777777777778,86.2222222222222" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Ole hyvä ja valitse kansio&quot;]" />
+                  <ui:SelectFolder DisplayName="Select download folder" sap:VirtualizedContainerService.HintSize="333.777777777778,80" sap2010:WorkflowViewState.IdRef="SelectFolder_7" SelectedFolder="[DownloadFolder]" />
+                </Sequence>
+              </ActivityAction>
+            </ui:RetryScope.ActivityBody>
+            <ui:RetryScope.Condition>
+              <ActivityFunc x:TypeArguments="x:Boolean" />
+            </ui:RetryScope.Condition>
+          </ui:RetryScope>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="840.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -158,26 +182,25 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,298.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_33">
+            <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_33">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="333.777777777778,86.2222222222222" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Ole hyvä ja valitse kansio&quot;]" />
-              <ui:SelectFolder DisplayName="Select download folder" sap:VirtualizedContainerService.HintSize="333.777777777778,80" sap2010:WorkflowViewState.IdRef="SelectFolder_6" SelectedFolder="[DownloadFolder]" />
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Error" Message="[&quot;Kansiopolun valinnassa tapahtui virhe!&quot;]" />
             </Sequence>
           </ActivityAction>
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <Sequence sap:VirtualizedContainerService.HintSize="703.555555555556,440.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_30">
+        <Sequence sap:VirtualizedContainerService.HintSize="837.333333333333,852" sap2010:WorkflowViewState.IdRef="Sequence_30">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If Condition="[Not DownloadFolder.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="661.777777777778,348.444444444444" sap2010:WorkflowViewState.IdRef="If_1">
+          <If Condition="[Not DownloadFolder.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="795.555555555556,759.555555555556" sap2010:WorkflowViewState.IdRef="If_1">
             <If.Then>
               <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_31">
                 <sap:WorkflowViewStateService.ViewState>
@@ -189,20 +212,36 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="241.777777777778,114.666666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,598.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_32">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Kansion valinta epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="200,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_7" Reason="Kansion valinta epäonnistui" />
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Kansion valinta epäonnistui, ajo lopetetaan&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                <Assign sap:VirtualizedContainerService.HintSize="333.777777777778,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[Log_DT_out]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[Log_DT_in]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
+                      <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
+                    </InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Kansion valinta epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_7" Reason="Kansion valinta epäonnistui, ajo lopetetaan" />
               </Sequence>
             </If.Else>
           </If>
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="437.333333333333,423.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="874.666666666667,423.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_8">
       <TryCatch.Try>
         <ui:GetLastDownloadedFile File="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[DownloadFolder]" sap:VirtualizedContainerService.HintSize="542.222222222222,584.444444444444" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4" Timeout="6">
           <ui:GetLastDownloadedFile.Body>
@@ -256,12 +295,18 @@
         <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto ladattu&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="437.333333333333,423.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="874.666666666667,1260.88888888889" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
         <ui:MoveFile ContinueOnError="{x:Null}" Destination="[IO.Directory.GetCurrentDirectory+&quot;\Data&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,161.333333333333" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadFolder+&quot;\Lappeenrannan kaupungin ostolaskut 2020.xlsx&quot;]" />
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="840.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -294,10 +339,56 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto siirretty kansioon &quot;+IO.Directory.GetCurrentDirectory+&quot;\Data&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+        <Sequence sap:VirtualizedContainerService.HintSize="837.333333333333,1027.11111111111" sap2010:WorkflowViewState.IdRef="Sequence_46">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="FileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:FileExistsX DisplayName="File Exists" Exists="[FileExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,135.111111111111" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="Data\Lappeenrannan kaupungin ostolaskut 2020.xlsx" />
+          <If Condition="[FileExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,759.555555555556" sap2010:WorkflowViewState.IdRef="If_4">
+            <If.Then>
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,281.777777777778" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto siirretty kansioon &quot;+IO.Directory.GetCurrentDirectory+&quot;\Data&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_7" />
+              </Sequence>
+            </If.Then>
+            <If.Else>
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,598.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Ostolaskutiedoston siirto epäonnistui}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_8" />
+                <Assign sap:VirtualizedContainerService.HintSize="333.777777777778,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_3">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="sd:DataTable">[Log_DT_out]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="sd:DataTable">[Log_DT_in]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                </ui:InvokeWorkflowFile>
+                <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Tiedoston siirto epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_8" Reason="Tiedoston siirto epäonnistui, ajo lopetetaan" />
+              </Sequence>
+            </If.Else>
+          </If>
+        </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="874.666666666667,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_3">
       <ui:CommentOut.Body>
         <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.555555555556,556.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_36">
           <sap:WorkflowViewStateService.ViewState>
@@ -332,7 +423,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Assign sap:VirtualizedContainerService.HintSize="437.333333333333,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="874.666666666667,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[Log_DT_out]</OutArgument>
       </Assign.To>
@@ -340,5 +431,12 @@
         <InArgument x:TypeArguments="sd:DataTable">[Log_DT_in]</InArgument>
       </Assign.Value>
     </Assign>
+    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="874.666666666667,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
+          <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
+        </InArgument>
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
   </Sequence>
 </Activity>
