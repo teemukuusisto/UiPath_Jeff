@@ -106,7 +106,7 @@
           <av:PointCollection x:Key="ConnectorLocation">260,126.444444444444 260,133.555555555556</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="874.666666666667,1295.11111111111" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
           <Sequence sap:VirtualizedContainerService.HintSize="459.111111111111,556" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
@@ -641,7 +641,7 @@
           <av:PointCollection x:Key="ConnectorLocation">250,66.4444444444444 260,66.4444444444444 260,73.5555555555556</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LuoLoki workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="LuoLoki.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AvaaLoki workflow" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="AvaaLoki.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
             <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
