@@ -1,11 +1,13 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="HaeOstolaskut" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="StartTimeOut" Type="OutArgument(x:TimeSpan)" />
+    <x:Property Name="Log_DT_in" Type="InArgument(sd:DataTable)" />
+    <x:Property Name="Log_DT_out" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>780.888888888889,2642.66666666667</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>848,2060.44444444444</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HaeOstolaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="74">
@@ -50,7 +52,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="66">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -84,9 +86,10 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow knavigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="621.333333333333,2577.77777777778" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow navigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin ja siirtää sen sieltä omaan data-kansioonsa." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="479.111111111111,1995.55555555556" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OstolaskudataDT" />
       <Variable x:TypeArguments="x:String" Name="URL" />
@@ -95,7 +98,6 @@
           <Literal x:TypeArguments="x:String" Value="" />
         </Variable.Default>
       </Variable>
-      <Variable x:TypeArguments="sd:DataTable" Name="Log_DT" />
       <Variable x:TypeArguments="x:Double" Name="Summa" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -104,17 +106,51 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DataTable="[Log_DT]" DisplayName="Pohja lokitiedostolle" sap:VirtualizedContainerService.HintSize="579.555555555556,59.5555555555556" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Tyyppi&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tapahtuma&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Ajon aloitus&quot;,&quot;Ajo aloitettu &quot;+System.DateTime.Now.ToString}]" DataTable="[Log_DT]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="579.555555555556,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
-    <TryCatch DisplayName="Try Catch - Kansiopolku" sap:VirtualizedContainerService.HintSize="579.555555555556,313.777777777778" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.555555555556,152" sap2010:WorkflowViewState.IdRef="Sequence_34">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:BuildDataTable DataTable="[Log_DT]" DisplayName="Pohja lokitiedostolle" sap:VirtualizedContainerService.HintSize="333.777777777778,59.5555555555556" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Tyyppi&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Tapahtuma&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="375.555555555556,281.777777777778" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Ajon aloitus&quot;,System.DateTime.Now.ToString}]" DataTable="[Log_DT]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <TryCatch DisplayName="Try Catch - Kansiopolku" sap:VirtualizedContainerService.HintSize="437.333333333333,536.444444444444" sap2010:WorkflowViewState.IdRef="TryCatch_10">
       <TryCatch.Try>
         <ui:SelectFolder DisplayName="Select download folder" sap:VirtualizedContainerService.HintSize="333.777777777778,80" sap2010:WorkflowViewState.IdRef="SelectFolder_4" SelectedFolder="[DownloadFolder]" />
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_11">
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,369.333333333333" sap2010:WorkflowViewState.IdRef="Catch`1_11">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -166,7 +202,7 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="579.555555555556,818.222222222222" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="437.333333333333,423.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_8">
       <TryCatch.Try>
         <ui:GetLastDownloadedFile File="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[DownloadFolder]" sap:VirtualizedContainerService.HintSize="542.222222222222,584.444444444444" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_4" Timeout="6">
           <ui:GetLastDownloadedFile.Body>
@@ -201,7 +237,7 @@
         </ui:GetLastDownloadedFile>
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="s:TimeoutException" sap:VirtualizedContainerService.HintSize="545.777777777778,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_9">
+        <Catch x:TypeArguments="s:TimeoutException" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_9">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -217,10 +253,10 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto ladattu&quot;}]" DataTable="[Log_DT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto ladattu&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="579.555555555556,395.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="437.333333333333,423.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <TryCatch.Try>
         <ui:MoveFile ContinueOnError="{x:Null}" Destination="[IO.Directory.GetCurrentDirectory+&quot;\Data&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,161.333333333333" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadFolder+&quot;\Lappeenrannan kaupungin ostolaskut 2020.xlsx&quot;]" />
       </TryCatch.Try>
@@ -236,16 +272,17 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="si:FileNotFoundException" Name="exception" />
             </ActivityAction.Argument>
-            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="417.333333333333,364.444444444444" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="2">
+            <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="417.333333333333,593.777777777778" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="2">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,416.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Warn" Message="[&quot;Tiedostoa ei löytynyt, yritetään uudelleen&quot;]" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Warn&quot;,&quot;Tiedostoa ei löytynyt, yritetään uudelleen&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
                   </Sequence>
                 </ActivityAction>
               </ui:RetryScope.ActivityBody>
@@ -257,26 +294,51 @@
         </Catch>
       </TryCatch.Catches>
       <TryCatch.Finally>
-        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto siirretty kansioon &quot;+IO.Directory.GetCurrentDirectory+&quot;\Data&quot;}]" DataTable="[Log_DT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskutiedosto siirretty kansioon &quot;+IO.Directory.GetCurrentDirectory+&quot;\Data&quot;}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
       </TryCatch.Finally>
     </TryCatch>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Lokikirjaus" sap:VirtualizedContainerService.HintSize="579.555555555556,464.444444444444" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="Data\Yhteenvetoraportti.xlsx">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.555555555556,355.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_28">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.777777777778,135.111111111111" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A:Z" SheetName="Sheet1" ShiftCells="False" ShiftOption="ShiftUp" />
-            <ui:ExcelWriteRange AddHeaders="True" DataTable="[Log_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.777777777778,87.5555555555556" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="437.333333333333,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="475.555555555556,556.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_36">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope - Lokikirjaus" sap:VirtualizedContainerService.HintSize="433.777777777778,464.444444444444" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" InstanceCachePeriod="3000" WorkbookPath="Data\Yhteenvetoraportti.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="375.555555555556,355.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelDeleteRange DisplayName="Delete Range" sap:VirtualizedContainerService.HintSize="333.777777777778,135.111111111111" sap2010:WorkflowViewState.IdRef="ExcelDeleteRange_1" Range="A:Z" SheetName="Sheet1" ShiftCells="False" ShiftOption="ShiftUp" />
+                  <ui:ExcelWriteRange AddHeaders="True" DataTable="[Log_DT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="333.777777777778,87.5555555555556" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="437.333333333333,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="sd:DataTable">[Log_DT_out]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="sd:DataTable">[Log_DT_in]</InArgument>
+      </Assign.Value>
+    </Assign>
   </Sequence>
 </Activity>
