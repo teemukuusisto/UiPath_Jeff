@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>848,701.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>818.222222222222,701.333333333333</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -90,7 +90,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">10,2.44444444444444</av:Point>
         <av:Size x:Key="ShapeSize">60,75.1111111111111</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">70,40 100,40 100,0 250,0 250,13.5555555555556</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">70,40 100,40 100,-16.4444444444444 250,-16.4444444444444 250,13.5555555555556</av:PointCollection>
         <x:Double x:Key="Width">694.22222222222217</x:Double>
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
       </scg:Dictionary>
@@ -101,9 +101,9 @@
     <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">160,73.5555555555556</av:Point>
+          <av:Point x:Key="ShapeLocation">150,83.5555555555556</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">260,126.444444444444 260,133.555555555556</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">250,136.444444444444 250,143.555555555556</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_1">
@@ -164,42 +164,20 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,219.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Ostolaskudatan hakuprosessissa tapahtui virhe, yritetään uudelleen!&quot;]">
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[&quot;Ostolaskudatan hakuprosessissa tapahtui virhe&quot;]">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsPinned">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                 </ui:LogMessage>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="333.777777777778,52.8888888888889" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                  <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap2010:WorkflowViewState.IdRef="Sequence_13">
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="HaeOstolaskuExcel.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <OutArgument x:TypeArguments="x:TimeSpan" x:Key="StartTimeOut" />
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </OutArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
-                    </Sequence>
-                  </ui:CommentOut.Body>
-                </ui:CommentOut>
               </Sequence>
             </ActivityAction>
           </Catch>
@@ -222,14 +200,14 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:FileExistsX>
-            <If Condition="[FileExists = True]" sap:VirtualizedContainerService.HintSize="795.555555555556,793.777777777778" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[FileExists = True]" DisplayName="If - Tarkistetaan löytyykö tiedosto" sap:VirtualizedContainerService.HintSize="795.555555555556,793.777777777778" sap2010:WorkflowViewState.IdRef="If_1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,416.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -243,6 +221,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Ostolaskudatan haku onnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_6">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:AddDataRow>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -260,7 +245,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:LogMessage>
-                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Ostolaskudatan haku epäonnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_4">
+                  <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Ostolaskudatan haku epäonnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -269,9 +254,7 @@
                   </ui:AddDataRow>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -279,7 +262,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
-                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Ostolaskudatan haku epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="Tiedostoa ei onnistuttu tallentamaan" />
+                  <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Ostolaskudatan haku epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="Tiedostoa ei onnistuttu tallentamaan, lopetetaan" />
                 </Sequence>
               </If.Else>
             </If>
@@ -290,43 +273,172 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">160,133.555555555556</av:Point>
+              <av:Point x:Key="ShapeLocation">150,143.555555555556</av:Point>
               <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">260,186.444444444444 260,193.555555555556</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">250,196.444444444444 250,203.555555555556</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File - Kerää kuukauden data" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="KerääKuukausidata.xaml">
-            <ui:InvokeWorkflowFile.Arguments>
-              <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-              </InArgument>
-              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-              </OutArgument>
-            </ui:InvokeWorkflowFile.Arguments>
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-          </ui:InvokeWorkflowFile>
+          <TryCatch DisplayName="TryCatch - Kerää kuukausidata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+            <TryCatch.Try>
+              <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="417.333333333333,463.555555555556" sap2010:WorkflowViewState.IdRef="RetryScope_3">
+                <ui:RetryScope.ActivityBody>
+                  <ActivityAction>
+                    <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,206.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File - Kerää kuukauden data" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_18" UnSafe="False" WorkflowFileName="KerääKuukausidata.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:RetryScope.ActivityBody>
+                <ui:RetryScope.Condition>
+                  <ActivityFunc x:TypeArguments="x:Boolean" />
+                </ui:RetryScope.Condition>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:RetryScope>
+            </TryCatch.Try>
+            <TryCatch.Catches>
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="420.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ActivityAction x:TypeArguments="s:Exception">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                  </ActivityAction.Argument>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Error" Message="[&quot;Kuukauden datan hakemisessa tapahtui virhe&quot;]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:LogMessage>
+                </ActivityAction>
+              </Catch>
+            </TryCatch.Catches>
+            <TryCatch.Finally>
+              <Sequence sap:VirtualizedContainerService.HintSize="837.333333333333,1061.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="MonthFileExists" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <ui:FileExistsX DisplayName="File Exists" Exists="[MonthFileExists]" sap:VirtualizedContainerService.HintSize="795.555555555556,135.111111111111" sap2010:WorkflowViewState.IdRef="FileExistsX_2" Path="Data\Kuukauden ostolaskut 2020.xlsx">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:FileExistsX>
+                <If Condition="[MonthFileExists]" DisplayName="If - Tarkistetaan löytyykö tiedosto" sap:VirtualizedContainerService.HintSize="795.555555555556,793.777777777778" sap2010:WorkflowViewState.IdRef="If_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,416.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Kuukausidata haettiin onnistuneesti&quot;]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Kuukausidata haettiin onnistuneesti&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:AddDataRow>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,632.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Fatal" Message="[&quot;Kuukausidatan haku epäonnistui&quot;]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:LogMessage>
+                      <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Kuukausidatan haku epäonnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_7">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:AddDataRow>
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_19" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
+                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
+                          </InArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                      <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Ostolaskudatan haku epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_3" Reason="Kuukausidatan haku epäonnistui, lopetetaan" />
+                    </Sequence>
+                  </If.Else>
+                </If>
+              </Sequence>
+            </TryCatch.Finally>
+          </TryCatch>
           <FlowStep.Next>
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">160,193.555555555556</av:Point>
+                  <av:Point x:Key="ShapeLocation">150,203.555555555556</av:Point>
                   <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">260,246.444444444444 260,253.555555555556</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">250,256.444444444444 250,263.555555555556</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke HaeSuurimmatToimittajat workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="HaeSuurimmatToimittajat.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
-                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                  </InArgument>
-                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                  </OutArgument>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -338,32 +450,50 @@
                 <FlowStep x:Name="__ReferenceID6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">160,253.555555555556</av:Point>
+                      <av:Point x:Key="ShapeLocation">150,263.555555555556</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">260,306.444444444444 250,306.444444444444 250,323.555555555556</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">250,316.444444444444 250,323.555555555556</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch DisplayName="TryCatch - Lisää käyttäjä" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                     <TryCatch.Try>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LisääKäyttäjä workflow" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="LisääKäyttäjä.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </OutArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
+                      <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="417.333333333333,463.555555555556" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="2">
+                        <ui:RetryScope.ActivityBody>
+                          <ActivityAction>
+                            <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="375.555555555556,206.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LisääKäyttäjä workflow" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="LisääKäyttäjä.xaml">
+                                <ui:InvokeWorkflowFile.Arguments>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
+                                </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:InvokeWorkflowFile>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:RetryScope.ActivityBody>
+                        <ui:RetryScope.Condition>
+                          <ActivityFunc x:TypeArguments="x:Boolean" />
+                        </ui:RetryScope.Condition>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
+                      </ui:RetryScope>
                     </TryCatch.Try>
                     <TryCatch.Catches>
-                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="840.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_2">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -374,48 +504,26 @@
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                           </ActivityAction.Argument>
-                          <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,570.222222222222" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                          <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,219.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Käyttäjän lisääminen epäonnistui, yritetään uudelleen&quot;]">
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.777777777778,94.6666666666667" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Error" Message="[&quot;Käyttäjän lisääminen epäonnistui&quot;]">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                             </ui:LogMessage>
-                            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Error&quot;,&quot;Käyttäjän lisääminen epäonnistui, yritetään uudelleen&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:AddDataRow>
-                            <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LisääKäyttäjä File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="LisääKäyttäjä.xaml">
-                              <ui:InvokeWorkflowFile.Arguments>
-                                <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                                  <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                </InArgument>
-                                <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                                  <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                </OutArgument>
-                              </ui:InvokeWorkflowFile.Arguments>
-                              <sap:WorkflowViewStateService.ViewState>
-                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
-                                </scg:Dictionary>
-                              </sap:WorkflowViewStateService.ViewState>
-                            </ui:InvokeWorkflowFile>
                           </Sequence>
                         </ActivityAction>
                       </Catch>
                     </TryCatch.Catches>
                     <TryCatch.Finally>
-                      <Sequence sap:VirtualizedContainerService.HintSize="837.333333333333,811.555555555556" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence sap:VirtualizedContainerService.HintSize="837.333333333333,872.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="ss:SecureString" Name="Password" />
                           <Variable x:TypeArguments="x:String" Name="Username">
@@ -437,7 +545,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </p:GetSecureCredential>
-                        <If Condition="[Not Username.equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="795.555555555556,598.222222222222" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[Not Username.equals(&quot;&quot;)]" DisplayName="If - Tarkistetaan löytyykö käyttäjä" sap:VirtualizedContainerService.HintSize="795.555555555556,659.111111111111" sap2010:WorkflowViewState.IdRef="If_2">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -458,7 +566,7 @@
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                               </ui:LogMessage>
-                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Käyttäjän ja salasanan lisääminen onnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Käyttäjän ja salasanan lisääminen onnistui&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -468,14 +576,14 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,436.888888888889" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,497.777777777778" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Käyttäjän ja salasanan lisääminen epäonnistui, ajo lopetetaan&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Fatal&quot;,&quot;Käyttäjän ja salasanan lisääminen epäonnistui, ajo lopetetaan&quot;}]" DataTable="[Log_DT_out]" DisplayName="Add Data Row - Lokikirjaus" sap:VirtualizedContainerService.HintSize="333.777777777778,189.333333333333" sap2010:WorkflowViewState.IdRef="AddDataRow_3">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsPinned">True</x:Boolean>
@@ -484,12 +592,15 @@
                               </ui:AddDataRow>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                  </InArgument>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                               </ui:InvokeWorkflowFile>
-                              <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Käyttäjän lisääminen epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" Reason="Käyttäjän lisääminen epäonnistui" />
+                              <TerminateWorkflow DisplayName="Terminate Workflow" Exception="[New Exception (&quot;Käyttäjän lisääminen epäonnistui, ajo lopetetaan.&quot;)]" sap:VirtualizedContainerService.HintSize="333.777777777778,22.2222222222222" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" Reason="Käyttäjän lisääminen epäonnistui, lopetetaan" />
                             </Sequence>
                           </If.Else>
                         </If>
@@ -502,17 +613,13 @@
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <av:Point x:Key="ShapeLocation">150,323.555555555556</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">250,376.444444444444 250,403.555555555556 260,403.555555555556</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">250,376.444444444444 250,383.555555555556</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäToimittajaTiedot workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SyötäToimittajaTiedot.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </InArgument>
-                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                          </OutArgument>
+                          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -524,19 +631,15 @@
                         <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">160,403.555555555556</av:Point>
+                              <av:Point x:Key="ShapeLocation">150,383.555555555556</av:Point>
                               <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">260,456.444444444444 260,473.555555555556</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">250,436.444444444444 250,443.555555555556</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäOstolaskut workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SyötäOstolaskut.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                                <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                              </InArgument>
-                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                                <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                              </OutArgument>
+                              <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                              <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -548,19 +651,15 @@
                             <FlowStep x:Name="__ReferenceID4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">160,473.555555555556</av:Point>
+                                  <av:Point x:Key="ShapeLocation">150,443.555555555556</av:Point>
                                   <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">360,500 390,500 390,100.444444444444 440,100.444444444444</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">350,470 380,470 380,100.444444444444 440,100.444444444444</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke MaksaHyväksytytLaskut workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="MaksaHyväksytytLaskut.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                                    <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                  </InArgument>
-                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-                                    <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                  </OutArgument>
+                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+                                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -578,9 +677,7 @@
                                   </sap:WorkflowViewStateService.ViewState>
                                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke LuoYhteenveto" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" UnSafe="False" WorkflowFileName="LuoYhteenveto.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-                                        <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-                                      </InArgument>
+                                      <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -619,12 +716,8 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Testi workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Testi.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">
-            <mva:VisualBasicValue x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-          </InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-          </OutArgument>
+          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -638,14 +731,12 @@
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">150,13.5555555555556</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">250,66.4444444444444 260,66.4444444444444 260,73.5555555555556</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">250,66.4444444444445 250,83.5555555555556</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AvaaLoki workflow" sap:VirtualizedContainerService.HintSize="333.777777777778,113.777777777778" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="AvaaLoki.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AvaaLoki workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="AvaaLoki.xaml">
         <ui:InvokeWorkflowFile.Arguments>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">
-            <mva:VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="Log_DT_out" />
-          </OutArgument>
+          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
