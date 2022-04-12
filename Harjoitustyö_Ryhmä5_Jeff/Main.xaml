@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>818.222222222222,701.333333333333</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>818.222222222222,839.111111111111</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="31">
@@ -81,18 +81,20 @@
       <x:Boolean x:Key="ShouldCollapseAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Flowchart DisplayName="Flowchart - Prosessi" sap:VirtualizedContainerService.HintSize="728,636.444444444444" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart sap2010:Annotation.AnnotationText="Jeff:n prosessi. Vasemmalla ostolaskudatan käsittelyn pääprosessi, oikealla apu-/tukitoiminnot." DisplayName="Flowchart - Prosessi, Jeff" sap:VirtualizedContainerService.HintSize="728,774.222222222222" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="x:TimeSpan" Name="Start_time" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <av:Point x:Key="ShapeLocation">10,2.44444444444444</av:Point>
+        <av:Point x:Key="ShapeLocation">300,2.44444444444444</av:Point>
         <av:Size x:Key="ShapeSize">60,75.1111111111111</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">70,40 100,40 100,-16.4444444444444 250,-16.4444444444444 250,13.5555555555556</av:PointCollection>
+        <av:PointCollection x:Key="ConnectorLocation">360,40 530,40 530,83.5555555555556</av:PointCollection>
         <x:Double x:Key="Width">694.22222222222217</x:Double>
         <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        <x:Double x:Key="Height">706.44444444444446</x:Double>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
@@ -101,9 +103,9 @@
     <FlowStep x:Name="__ReferenceID7">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">150,83.5555555555556</av:Point>
+          <av:Point x:Key="ShapeLocation">40,83.5555555555556</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">250,136.444444444444 250,143.555555555556</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">140,136.444444444444 140,153.555555555556</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch DisplayName="TryCatch - Hae Ostolaskudata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_1">
@@ -233,7 +235,7 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,187.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
+              <Sequence sap:VirtualizedContainerService.HintSize="375.555555555556,219.111111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -342,12 +344,12 @@
         <FlowStep x:Name="__ReferenceID0">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">150,143.555555555556</av:Point>
+              <av:Point x:Key="ShapeLocation">40,153.555555555556</av:Point>
               <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">250,196.444444444444 250,203.555555555556</av:PointCollection>
+              <av:PointCollection x:Key="ConnectorLocation">140,206.444444444444 140,223.555555555556</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <TryCatch DisplayName="TryCatch - Kerää kuukausidata" sap:VirtualizedContainerService.HintSize="874.666666666667,1160.44444444444" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="TryCatch - Kerää kuukausidata" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <TryCatch.Variables>
               <Variable x:TypeArguments="x:Int32" Name="Yritys">
                 <Variable.Default>
@@ -560,12 +562,12 @@
             <FlowStep x:Name="__ReferenceID1">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">150,203.555555555556</av:Point>
+                  <av:Point x:Key="ShapeLocation">40,223.555555555556</av:Point>
                   <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">250,256.444444444444 250,263.555555555556</av:PointCollection>
+                  <av:PointCollection x:Key="ConnectorLocation">240,250 430,250</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke HaeSuurimmatToimittajat workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="HaeSuurimmatToimittajat.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke HaeSuurimmatToimittajat" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="HaeSuurimmatToimittajat.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                   <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
@@ -580,9 +582,9 @@
                 <FlowStep x:Name="__ReferenceID6">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">150,263.555555555556</av:Point>
+                      <av:Point x:Key="ShapeLocation">430,223.555555555556</av:Point>
                       <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">250,316.444444444444 250,323.555555555556</av:PointCollection>
+                      <av:PointCollection x:Key="ConnectorLocation">530,276.444444444444 530,320 240,320</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <TryCatch DisplayName="TryCatch - Lisää käyttäjä" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="TryCatch_2">
@@ -741,12 +743,12 @@
                     <FlowStep x:Name="__ReferenceID2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">150,323.555555555556</av:Point>
+                          <av:Point x:Key="ShapeLocation">40,293.555555555556</av:Point>
                           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">250,376.444444444444 250,383.555555555556</av:PointCollection>
+                          <av:PointCollection x:Key="ConnectorLocation">140,346.444444444444 140,363.555555555556</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäToimittajaTiedot workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SyötäToimittajaTiedot.xaml">
+                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäToimittajaTiedot" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="SyötäToimittajaTiedot.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
                           <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                           <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
@@ -761,12 +763,12 @@
                         <FlowStep x:Name="__ReferenceID3">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">150,383.555555555556</av:Point>
+                              <av:Point x:Key="ShapeLocation">40,363.555555555556</av:Point>
                               <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">250,436.444444444444 250,443.555555555556</av:PointCollection>
+                              <av:PointCollection x:Key="ConnectorLocation">140,416.444444444444 140,443.555555555556</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäOstolaskut workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SyötäOstolaskut.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke SyötäOstolaskut" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="SyötäOstolaskut.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                               <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
@@ -781,12 +783,12 @@
                             <FlowStep x:Name="__ReferenceID4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">150,443.555555555556</av:Point>
+                                  <av:Point x:Key="ShapeLocation">40,443.555555555556</av:Point>
                                   <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">350,470 380,470 380,100.444444444444 440,100.444444444444</av:PointCollection>
+                                  <av:PointCollection x:Key="ConnectorLocation">240,470 430,470</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke MaksaHyväksytytLaskut workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="MaksaHyväksytytLaskut.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke MaksaHyväksytytLaskut" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" UnSafe="False" WorkflowFileName="MaksaHyväksytytLaskut.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
                                   <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
@@ -801,7 +803,7 @@
                                 <FlowStep x:Name="__ReferenceID5">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">440,74</av:Point>
+                                      <av:Point x:Key="ShapeLocation">430,443.555555555556</av:Point>
                                       <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
@@ -837,34 +839,15 @@
     <x:Reference>__ReferenceID4</x:Reference>
     <x:Reference>__ReferenceID5</x:Reference>
     <x:Reference>__ReferenceID6</x:Reference>
-    <FlowStep>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">460,283.555555555556</av:Point>
-          <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Testi workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="Testi.xaml">
-        <ui:InvokeWorkflowFile.Arguments>
-          <InArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_in">[Log_DT_out]</InArgument>
-          <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
-        </ui:InvokeWorkflowFile.Arguments>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:InvokeWorkflowFile>
-    </FlowStep>
     <FlowStep x:Name="__ReferenceID8">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">150,13.5555555555556</av:Point>
+          <av:Point x:Key="ShapeLocation">430,83.5555555555556</av:Point>
           <av:Size x:Key="ShapeSize">200,52.8888888888889</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">250,66.4444444444445 250,83.5555555555556</av:PointCollection>
+          <av:PointCollection x:Key="ConnectorLocation">430,110 240,110</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AvaaLoki workflow" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="AvaaLoki.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke AvaaLoki" sap:VirtualizedContainerService.HintSize="200,52.8888888888889" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="AvaaLoki.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="sd:DataTable" x:Key="Log_DT_out">[Log_DT_out]</OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
