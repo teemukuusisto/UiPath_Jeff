@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1420,6014</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1348,8274</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SyötäOstolaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -46,7 +46,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="31">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="62">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -78,15 +78,40 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>BouncyCastle.Crypto</AssemblyReference>
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SyötäOstolaskut" sap:VirtualizedContainerService.HintSize="1358,5949" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SyötäOstolaskut" sap:VirtualizedContainerService.HintSize="1358,8209" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OstolaskutDT" />
       <Variable x:TypeArguments="x:Int32" Name="Referencenumber" />
       <Variable x:TypeArguments="x:Double" Name="Summa" />
-      <Variable x:TypeArguments="x:Int32" Default="0" Name="TositeID" />
-      <Variable x:TypeArguments="x:Int32" Default="1" Name="TestiajoRajoitus" />
+      <Variable x:TypeArguments="x:Int32" Name="TositeID">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="TestiajoRajoitus">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="Virhe_exists" />
+      <Variable x:TypeArguments="x:Int32" Name="Count">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Int32" Name="AnnettuRajoitus">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="8" />
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:Boolean" Name="RetryVar">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Boolean" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,7 +141,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OstolaskutDT]" DisplayName="Muutetaan vuodeksi 2022 netvisoria varten ja  muutetaan tositenumero yksilöiväksi" sap:VirtualizedContainerService.HintSize="1316,472" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OstolaskutDT]" DisplayName="Muutetaan vuodeksi 2022 netvisoria varten ja  muutetaan tositenumero yksilöiväksi" sap:VirtualizedContainerService.HintSize="1316,473" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -156,48 +181,143 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="1316,4945" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e9d01dd4c03d559de87c377e0a2b91db" Selector="&lt;html app='chrome.exe' title='Netvisor :: Toimittajalistaus' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="1316,7538" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e9d01dd4c03d559de87c377e0a2b91db" Selector="&lt;html app='chrome.exe' title='Netvisor :: Toimittajalistaus' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1282,4799" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap2010:Annotation.AnnotationText="Syötetään ostolaskut Netvisoriin ja hyväksytään annetun summan alle jäävät heti. Hyväklsynnän yhteydessä kirjaus ostotilille&#xD;&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="1282,7392" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog - pyydä summa" sap:VirtualizedContainerService.HintSize="1240,238" sap2010:WorkflowViewState.IdRef="InputDialog_1" IsPassword="False" Label="Anna summa, sen alle jäävät laskut hyväksytään automaattisesti" Title="Summa">
-              <ui:InputDialog.Result>
-                <OutArgument x:TypeArguments="x:Double">[Summa]</OutArgument>
-              </ui:InputDialog.Result>
-            </ui:InputDialog>
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Valittu summa: &quot;+Summa.ToString+&quot;, sitä pienemmät laskut maksetaan heti&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus" sap:VirtualizedContainerService.HintSize="1240,185" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Aloitetaan ostolaskujen syöttö, syötetään 10 laskua&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus" sap:VirtualizedContainerService.HintSize="1240,185" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[OstolaskutDT]" DisplayName="Syötetään 10 laskua, hyväksytään summan alle jäävät" sap:VirtualizedContainerService.HintSize="1240,3880" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1206,3761" sap2010:WorkflowViewState.IdRef="Sequence_3">
+            <ui:RetryScope sap2010:Annotation.AnnotationText="Tarkistetaan käyttäjän syötteen oikeellisuus&#xD;&#xA;" ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1240,1024" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="10">
+              <ui:RetryScope.ActivityBody>
+                <ActivityAction>
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="476,733" sap2010:WorkflowViewState.IdRef="Sequence_26">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <If Condition="[TestiajoRajoitus &lt;= 10]" sap:VirtualizedContainerService.HintSize="1164,3669" sap2010:WorkflowViewState.IdRef="If_2">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,641" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                      <TryCatch.Try>
+                        <Sequence sap:VirtualizedContainerService.HintSize="633,715" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog - pyydä summa" sap:VirtualizedContainerService.HintSize="591,242" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Anna summa, sen alle jäävät laskut hyväksytään automaattisesti" Title="Summa">
+                            <ui:InputDialog.Result>
+                              <OutArgument x:TypeArguments="x:Double">[Summa]</OutArgument>
+                            </ui:InputDialog.Result>
+                          </ui:InputDialog>
+                          <If Condition="[Summa.IsNumeric]" sap:VirtualizedContainerService.HintSize="591,341" sap2010:WorkflowViewState.IdRef="If_7">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[RetryVar]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="242,84" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                        </Sequence>
+                      </TryCatch.Try>
+                      <TryCatch.Catches>
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,475" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ActivityAction x:TypeArguments="s:Exception">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                            </ActivityAction.Argument>
+                            <Sequence sap:VirtualizedContainerService.HintSize="376,405" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:MessageBox ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" Buttons="Ok" Caption="Varoitus" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Annettu syöte ei kelpaa, yritä uudelleen&quot;]" />
+                              <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Error&quot;,&quot;Syötetty summa ei kelpaa, yritetään uudelleen&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_9" />
+                            </Sequence>
+                          </ActivityAction>
+                        </Catch>
+                      </TryCatch.Catches>
+                    </TryCatch>
+                  </Sequence>
+                </ActivityAction>
+              </ui:RetryScope.ActivityBody>
+              <ui:RetryScope.Condition>
+                <ActivityFunc x:TypeArguments="x:Boolean">
+                  <ui:CheckTrue ErrorMessage="{x:Null}" DisplayName="Check True" Expression="[RetryVar]" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="CheckTrue_2" />
+                </ActivityFunc>
+              </ui:RetryScope.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:RetryScope>
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Valittu summa: &quot;+Summa.ToString+&quot;, sitä pienemmät laskut maksetaan heti&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus" sap:VirtualizedContainerService.HintSize="1240,188" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Info&quot;,&quot;Aloitetaan ostolaskujen syöttö, syötetään &quot;+AnnettuRajoitus.ToString+&quot; laskua&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus" sap:VirtualizedContainerService.HintSize="1240,188" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Syötetään laskut. Demoajossa syötettävien rivien määrä rajoitettu kymmeneen." DataTable="[OstolaskutDT]" DisplayName="Syötetään 10 laskua, hyväksytään summan alle jäävät" sap:VirtualizedContainerService.HintSize="1240,5637" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1206,5486" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If Condition="[TestiajoRajoitus &lt;= AnnettuRajoitus]" sap:VirtualizedContainerService.HintSize="1164,5394" sap2010:WorkflowViewState.IdRef="If_2">
                       <If.Then>
-                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,3512" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="877,5235" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Try>
-                            <Sequence sap:VirtualizedContainerService.HintSize="839,3285" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence sap:VirtualizedContainerService.HintSize="839,5003" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <ui:NavigateTo Browser="{x:Null}" DisplayName="Avataan uuden laskun syöttöikkuna" sap:VirtualizedContainerService.HintSize="797,59" sap2010:WorkflowViewState.IdRef="NavigateTo_1" Url="https://koulutus.netvisor.fi/evo/accounting/purchaseinvoice/invoice.aspx" />
+                              <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[TestiajoRajoitus]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[TestiajoRajoitus+1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
                               <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_3" />
                               <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  invoicenumber'" sap:VirtualizedContainerService.HintSize="797,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" Text="[CurrentRow(&quot;Tositenro&quot;).ToString]">
                                 <ui:TypeInto.Target>
@@ -224,7 +344,7 @@
                                 </ui:TypeInto.Target>
                               </ui:TypeInto>
                               <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_1" />
-                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="797,114" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="797,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
                                 <ui:SendHotkey.Target>
                                   <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="d25b1419-dc54-4a30-aeac-2b4a93bfd78f">
                                     <ui:Target.TimeoutMS>
@@ -330,9 +450,126 @@
                                   </ui:Target>
                                 </ui:Click.Target>
                               </ui:Click>
-                              <If Condition="[convert.ToDouble(CurrentRow(&quot;Summa&quot;)) &lt;=Summa]" sap:VirtualizedContainerService.HintSize="797,1278" sap2010:WorkflowViewState.IdRef="If_1">
+                              <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="Delay_7" />
+                              <ui:UiElementExists sap2010:Annotation.AnnotationText="Tarkastetaan virheilmoitukset Netvisorissa" DisplayName="Element Exists 'P'" Exists="[Virhe_exists]" sap:VirtualizedContainerService.HintSize="797,137" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                                <ui:UiElementExists.Target>
+                                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fa825a9b-3391-488e-ba61-639d1fd697cf" InformativeScreenshot="30a832024b17c9f6541fdeb35cdcd514" Selector="&lt;html app='chrome.exe' title='Netvisor :: Ostolasku' /&gt;&lt;webctrl id='iframe_*' tag='IFRAME' /&gt;&lt;webctrl tag='P' parentclass='alert__message' /&gt;" TimeoutMS="2000">
+                                    <ui:Target.WaitForReady>
+                                      <InArgument x:TypeArguments="ui:WaitForReady" />
+                                    </ui:Target.WaitForReady>
+                                  </ui:Target>
+                                </ui:UiElementExists.Target>
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </ui:UiElementExists>
+                              <If sap2010:Annotation.AnnotationText="Jos Netvisor ilmoittaa puutteellisesta laskusta, käydään saman laskun muutkin tiedot läpi. Lokikirjaukset puuttuvista tiedoista ennen seuraavaan siirtymistä." Condition="[Virhe_exists]" sap:VirtualizedContainerService.HintSize="797,1386" sap2010:WorkflowViewState.IdRef="If_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
                                 <If.Then>
-                                  <Sequence DisplayName="Hyväksytään lasku jos pienempi kuin summa" sap:VirtualizedContainerService.HintSize="376,1121" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="604,1153" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:Int32" Name="RowLength" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="562,131" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                      <ui:MultipleAssign.AssignOperations>
+                                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                            <ui:AssignOperation.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[RowLength]</OutArgument>
+                                            </ui:AssignOperation.To>
+                                            <ui:AssignOperation.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[OstolaskutDT.Columns.Count]</InArgument>
+                                            </ui:AssignOperation.Value>
+                                          </ui:AssignOperation>
+                                        </scg:List>
+                                      </ui:MultipleAssign.AssignOperations>
+                                    </ui:MultipleAssign>
+                                    <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="562,828" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                                      <ui:InterruptibleWhile.Body>
+                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,661" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <If Condition="[CurrentRow(count).toString.Equals(&quot;&quot;) Or CurrentRow(count).toString.Equals(&quot; &quot;)]" sap:VirtualizedContainerService.HintSize="484,469" sap2010:WorkflowViewState.IdRef="If_5">
+                                            <If.Then>
+                                              <Sequence sap:VirtualizedContainerService.HintSize="376,280" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                                <Sequence.Variables>
+                                                  <Variable x:TypeArguments="x:String" Name="variable1" />
+                                                </Sequence.Variables>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Error&quot;,&quot;Laskusta &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot; puuttuu &quot;+OstolaskutDT.Columns(count).ColumnName.ToString.ToLower}]" DataTable="[Log_DT_in]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_6" />
+                                              </Sequence>
+                                            </If.Then>
+                                            <If.Else>
+                                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </Sequence>
+                                            </If.Else>
+                                          </If>
+                                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Int32">[Count]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Int32">[Count+1]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                        </Sequence>
+                                      </ui:InterruptibleWhile.Body>
+                                      <ui:InterruptibleWhile.Condition>
+                                        <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="Count &lt; RowLength" />
+                                      </ui:InterruptibleWhile.Condition>
+                                    </ui:InterruptibleWhile>
+                                    <ui:Continue sap:VirtualizedContainerService.HintSize="562,22" sap2010:WorkflowViewState.IdRef="Continue_2" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="200,84" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                              <If sap2010:Annotation.AnnotationText="Tarkistetaan laskun summa ja hyväksytään, jos alle annetun rajan&#xD;&#xA;" Condition="[convert.ToDouble(CurrentRow(&quot;Summa&quot;)) &lt;=Summa]" sap:VirtualizedContainerService.HintSize="797,1229" sap2010:WorkflowViewState.IdRef="If_1">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <If.Then>
+                                  <Sequence DisplayName="Hyväksytään lasku jos pienempi kuin summa" sap:VirtualizedContainerService.HintSize="376,1026" sap2010:WorkflowViewState.IdRef="Sequence_5">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -351,7 +588,7 @@
                                       </ui:TypeInto.Target>
                                     </ui:TypeInto>
                                     <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_2" />
-                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,114" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
+                                    <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_2" Key="enter" KeyModifiers="None" SpecialKey="True">
                                       <ui:SendHotkey.Target>
                                         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="23edfdca-ffdb-4b4a-bf5f-304870aafe80">
                                           <ui:Target.TimeoutMS>
@@ -407,34 +644,18 @@
                                         </ui:Target>
                                       </ui:Click.Target>
                                     </ui:Click>
-                                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[TestiajoRajoitus]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[TestiajoRajoitus+1]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Maksettu lasku&quot;,&quot;Tositenro: &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot;, Toimittaja: &quot;+CurrentRow(&quot;Toimittaja&quot;).ToString+&quot;, Summa: &quot;+CurrentRow(&quot;Summa&quot;).ToString}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - maksettu lasku" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
+                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Maksettu lasku&quot;,&quot;Tositenro: &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot;, Toimittaja: &quot;+CurrentRow(&quot;Toimittaja&quot;).ToString+&quot;, Summa: &quot;+CurrentRow(&quot;Summa&quot;).ToString}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - maksettu lasku" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_3" />
                                     <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_4" />
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="376,501" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                      <Assign.To>
-                                        <OutArgument x:TypeArguments="x:Int32">[TestiajoRajoitus]</OutArgument>
-                                      </Assign.To>
-                                      <Assign.Value>
-                                        <InArgument x:TypeArguments="x:Int32">[TestiajoRajoitus+1]</InArgument>
-                                      </Assign.Value>
-                                    </Assign>
-                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Maksamaton lasku&quot;,&quot;Tositenro: &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot;, Toimittaja: &quot;+CurrentRow(&quot;Toimittaja&quot;).ToString+&quot;, Summa: &quot;+CurrentRow(&quot;Summa&quot;).ToString}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - maksamaton lasku" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
+                                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Maksamaton lasku&quot;,&quot;Tositenro: &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot;, Toimittaja: &quot;+CurrentRow(&quot;Toimittaja&quot;).ToString+&quot;, Summa: &quot;+CurrentRow(&quot;Summa&quot;).ToString}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - maksamaton lasku" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_4" />
                                     <Delay Duration="00:00:02" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_6" />
                                     <ui:Continue sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
                                   </Sequence>
@@ -443,7 +664,7 @@
                             </Sequence>
                           </TryCatch.Try>
                           <TryCatch.Catches>
-                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="843,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -454,7 +675,7 @@
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                 </ActivityAction.Argument>
-                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Error&quot;,&quot;Laskun &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot; kirjaaminen ei onnistunut&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - maksettu lasku" sap:VirtualizedContainerService.HintSize="334,185" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
+                                <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{&quot;Error&quot;,&quot;Laskun &quot;+CurrentRow(&quot;Tositenro&quot;).ToString+&quot; kirjaaminen ei onnistunut&quot;}]" DataTable="[Log_DT_in]" DisplayName="Lokikirjaus - laskun syötössä virhe" sap:VirtualizedContainerService.HintSize="334,188" sap2010:WorkflowViewState.IdRef="AddDataRow_5" />
                               </ActivityAction>
                             </Catch>
                           </TryCatch.Catches>
@@ -474,6 +695,11 @@
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
             <ui:NavigateTo Browser="{x:Null}" DisplayName="Navigate To" sap:VirtualizedContainerService.HintSize="1240,59" sap2010:WorkflowViewState.IdRef="NavigateTo_2" Url="https://koulutus.netvisor.fi/evo/accounting/purchaseinvoice/purchaseinvoiceview.aspx" />
           </Sequence>
