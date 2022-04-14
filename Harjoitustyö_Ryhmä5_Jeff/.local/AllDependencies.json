@@ -8338,15 +8338,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\teemu\\.nuget\\packages\\": {}
+    "C:\\Users\\Valtteri.000\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "Harjoitustyö_Ryhmä5_Jeff",
       "projectName": "Harjoitustyö_Ryhmä5_Jeff",
-      "projectPath": "C:\\Users\\teemu\\OneDrive\\Asiakirjat\\GitHub\\UiPath_Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local",
-      "packagesPath": "C:\\Users\\teemu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\teemu\\OneDrive\\Asiakirjat\\GitHub\\UiPath_Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local"
+      "projectPath": "C:\\Users\\Valtteri.000\\Documents\\UiPath\\Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local",
+      "packagesPath": "C:\\Users\\Valtteri.000\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Valtteri.000\\Documents\\UiPath\\Jeff\\Harjoitustyö_Ryhmä5_Jeff\\.local"
     },
     "frameworks": {
       "net461": {
@@ -8382,7 +8382,7 @@
             "version": "[21.10.5, 21.10.5]"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\teemu\\AppData\\Local\\Programs\\UiPath\\Studio\\runtime.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\UiPath\\Studio\\runtime.json"
       }
     },
     "runtimes": {

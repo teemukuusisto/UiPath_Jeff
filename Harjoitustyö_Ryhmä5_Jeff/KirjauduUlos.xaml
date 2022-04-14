@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1338,1242</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1336,1242</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>KirjauduUlos_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -69,7 +69,6 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
@@ -80,7 +79,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="434,1085" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="8cc78a7fb5a84cdad5d69c0d791a6543" Selector="&lt;html app='chrome.exe' title='Netvisor :: Aineiston lähetys' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="434,1085" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="c032e298035bee3fcc5a136c939014fe" Selector="&lt;html app='chrome.exe' title='Netvisor :: Tiedotusnäkymä' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
