@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1338,1991</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1336,1991</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MaksaHyväksytytLaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -150,7 +150,7 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <ui:UiElementExists Exists="{x:Null}" DisplayName="Element Exists" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                <ui:UiElementExists DisplayName="Element Exists" Exists="[Maksettavaa]" sap:VirtualizedContainerService.HintSize="797,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                   <ui:UiElementExists.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b01f4d19-c014-4245-8fc2-b848c6f75125" InformativeScreenshot="62156bc5e1f9a2307e5c0e7be9d02dc0" Selector="&lt;webctrl id='enginegroupcb_*' tag='INPUT' type='checkbox' /&gt;" TimeoutMS="2000">
                       <ui:Target.WaitForReady>
