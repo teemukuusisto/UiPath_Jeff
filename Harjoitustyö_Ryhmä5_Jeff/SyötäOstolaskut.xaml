@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1382,9014</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1348,9720</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SyötäOstolaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="33">
@@ -81,7 +81,7 @@
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SyötäOstolaskut" sap:VirtualizedContainerService.HintSize="1358,8949" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SyötäOstolaskut" sap:VirtualizedContainerService.HintSize="1358,9655" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OstolaskutDT" />
       <Variable x:TypeArguments="x:Int32" Name="Referencenumber" />
@@ -113,6 +113,11 @@
         </Variable.Default>
       </Variable>
       <Variable x:TypeArguments="s:DateTime" Name="invoiceDate" />
+      <Variable x:TypeArguments="x:Int32" Name="Kierros">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:Int32" Value="1" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,31 +187,31 @@
         </ActivityAction>
       </ui:ForEachRow.Body>
     </ui:ForEachRow>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="1316,7944" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e9d01dd4c03d559de87c377e0a2b91db" Selector="&lt;html app='chrome.exe' title='Netvisor :: Toimittajalistaus' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Netvisor'" sap:VirtualizedContainerService.HintSize="1316,8650" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="e9d01dd4c03d559de87c377e0a2b91db" Selector="&lt;html app='chrome.exe' title='Netvisor :: Toimittajalistaus' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence sap2010:Annotation.AnnotationText="Syötetään ostolaskut Netvisoriin ja hyväksytään annetun summan alle jäävät heti. Hyväklsynnän yhteydessä kirjaus ostotilille&#xD;&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="1282,7798" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence sap2010:Annotation.AnnotationText="Syötetään ostolaskut Netvisoriin ja hyväksytään annetun summan alle jäävät heti. Hyväklsynnän yhteydessä kirjaus ostotilille&#xD;&#xA;" DisplayName="Do" sap:VirtualizedContainerService.HintSize="1282,8504" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:RetryScope sap2010:Annotation.AnnotationText="Tarkistetaan käyttäjän syötteen oikeellisuus&#xD;&#xA;" ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1240,1330" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="10">
+            <ui:RetryScope sap2010:Annotation.AnnotationText="Tarkistetaan käyttäjän syötteen oikeellisuus&#xD;&#xA;" ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="1240,2036" sap2010:WorkflowViewState.IdRef="RetryScope_2" NumberOfRetries="10">
               <ui:RetryScope.ActivityBody>
                 <ActivityAction>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="606,1039" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="606,1745" sap2010:WorkflowViewState.IdRef="Sequence_26">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,947" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,1653" sap2010:WorkflowViewState.IdRef="TryCatch_4">
                       <TryCatch.Try>
-                        <Sequence sap:VirtualizedContainerService.HintSize="526,715" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                        <Sequence sap:VirtualizedContainerService.HintSize="526,1421" sap2010:WorkflowViewState.IdRef="Sequence_32">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -217,7 +222,7 @@
                               <OutArgument x:TypeArguments="x:Double">[Summa]</OutArgument>
                             </ui:InputDialog.Result>
                           </ui:InputDialog>
-                          <If Condition="[Summa.IsNumeric]" sap:VirtualizedContainerService.HintSize="484,341" sap2010:WorkflowViewState.IdRef="If_7">
+                          <If Condition="[Summa.IsNumeric And Summa &gt;= 0]" sap:VirtualizedContainerService.HintSize="484,341" sap2010:WorkflowViewState.IdRef="If_7">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -245,6 +250,51 @@
                               </Sequence>
                             </If.Else>
                           </If>
+                          <If Condition="[Kierros &gt;= 3]" sap:VirtualizedContainerService.HintSize="484,566" sap2010:WorkflowViewState.IdRef="If_8">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,377" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Double">[Summa]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Double">0</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                                <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,85" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Liian monta virhesyötettä. Summaksi valitaan 0&quot;]" />
+                                <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+                                  <Assign.To>
+                                    <OutArgument x:TypeArguments="x:Boolean">[RetryVar]</OutArgument>
+                                  </Assign.To>
+                                  <Assign.Value>
+                                    <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                  </Assign.Value>
+                                </Assign>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_34">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[Kierros]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[Kierros+1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
