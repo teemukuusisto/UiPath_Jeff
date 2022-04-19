@@ -1,13 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="HaeOstolaskut" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
-    <x:Property Name="StartTimeOut" Type="OutArgument(x:TimeSpan)" />
     <x:Property Name="Log_DT_in" Type="InArgument(sd:DataTable)" />
     <x:Property Name="Log_DT_out" Type="OutArgument(sd:DataTable)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>906.222222222222,3380</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>831.111111111111,2668</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HaeOstolaskut_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="38">
@@ -86,10 +85,9 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
       <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow navigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin ja siirtää sen sieltä omaan data-kansioonsa odottamaan jatkokäsittelyä." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="916.444444444444,3315.11111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Tämä workflow navigoi robotin Lappeenrannan kaupungin nettisivuille ja hakee vuoden 2020 ostolaskut sisältävän Excel tiedoston käyttäjältä pyydettyyn kansiosijaintiin ja siirtää sen sieltä omaan data-kansioonsa odottamaan jatkokäsittelyä." DisplayName="HaeOstolaskut" sap:VirtualizedContainerService.HintSize="704.888888888889,2603.11111111111" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="OstolaskudataDT" />
       <Variable x:TypeArguments="x:String" Name="URL" />
@@ -106,7 +104,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch - Kysy kansiopolku" sap:VirtualizedContainerService.HintSize="874.666666666667,802.222222222222" sap2010:WorkflowViewState.IdRef="TryCatch_10">
+    <TryCatch DisplayName="Try Catch - Kysy kansiopolku" sap:VirtualizedContainerService.HintSize="663.111111111111,802.222222222222" sap2010:WorkflowViewState.IdRef="TryCatch_10">
       <TryCatch.Try>
         <Sequence sap:VirtualizedContainerService.HintSize="459.111111111111,568.444444444444" sap2010:WorkflowViewState.IdRef="Sequence_37">
           <sap:WorkflowViewStateService.ViewState>
@@ -198,7 +196,7 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="874.666666666667,1088" sap2010:WorkflowViewState.IdRef="TryCatch_8">
+    <TryCatch DisplayName="Try Catch - Tiedoston lataus" sap:VirtualizedContainerService.HintSize="663.111111111111,1088" sap2010:WorkflowViewState.IdRef="TryCatch_8">
       <TryCatch.Try>
         <ui:RetryScope ContinueOnError="False" DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="625.777777777778,854.222222222222" sap2010:WorkflowViewState.IdRef="RetryScope_4" NumberOfRetries="2">
           <ui:RetryScope.ActivityBody>
@@ -335,7 +333,7 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="874.666666666667,1107.11111111111" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+    <TryCatch DisplayName="Try Catch - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="663.111111111111,395.111111111111" sap2010:WorkflowViewState.IdRef="TryCatch_5">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -346,7 +344,7 @@
         <ui:MoveFile ContinueOnError="{x:Null}" Destination="[IO.Directory.GetCurrentDirectory+&quot;\Data&quot;]" DisplayName="Move File - Tiedoston siirto" sap:VirtualizedContainerService.HintSize="384,161.333333333333" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[DownloadFolder+&quot;\Lappeenrannan kaupungin ostolaskut 2020.xlsx&quot;]" />
       </TryCatch.Try>
       <TryCatch.Catches>
-        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="840.888888888889,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_6">
+        <Catch x:TypeArguments="si:FileNotFoundException" sap:VirtualizedContainerService.HintSize="403.555555555556,22.6666666666667" sap2010:WorkflowViewState.IdRef="Catch`1_6">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -424,7 +422,7 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <Assign DisplayName="Assign - Palauta loki" sap:VirtualizedContainerService.HintSize="874.666666666667,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign DisplayName="Assign - Palauta loki" sap:VirtualizedContainerService.HintSize="663.111111111111,60.4444444444444" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[Log_DT_out]</OutArgument>
       </Assign.To>
